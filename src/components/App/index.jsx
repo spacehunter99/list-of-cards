@@ -11,10 +11,6 @@ const App = () => {
     dispatch(fetchCards());
   }, [dispatch]);
 
-  const cards = useSelector((state) => state.cards.cards);
-
-  console.log(cards);
-
   return (
     <div className="main-container">
       <CardList />

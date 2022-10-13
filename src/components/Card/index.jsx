@@ -1,11 +1,12 @@
 import React from "react";
 import "./style.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { removeCard, toggleIsLiked } from "./../../store/cardSlice";
 
 const Card = ({ info }) => {
   const { id, name, isLiked } = info;
   const dispatch = useDispatch();
+  const buttonState = useSelector((state) => state.cards.isButtonClicked);
 
   return (
     <div className="card-container">
@@ -14,7 +15,9 @@ const Card = ({ info }) => {
       <div className="heart" onClick={() => dispatch(toggleIsLiked({ id }))}>
         {isLiked ? <span>💖</span> : <span>🤍</span>}
       </div>
-      <button onClick={() => dispatch(removeCard({ id }))}>&times;</button>
+      {!buttonState && (
+        <button onClick={() => dispatch(removeCard({ id }))}>&times;</button>
+      )}
     </div>
   );
 };

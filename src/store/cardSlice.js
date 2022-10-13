@@ -18,6 +18,7 @@ const cardSlice = createSlice({
   name: "cards",
   initialState: {
     cards: [],
+    filteredCards: [],
     isButtonClicked: false,
   },
   reducers: {
@@ -29,13 +30,20 @@ const cardSlice = createSlice({
         (card) => card.id === action.payload.id
       );
       likedCards.isLiked = !likedCards.isLiked;
+
+      if (state.isButtonClicked) {
+        const filetredlikedCards = state.filteredCards.find(
+          (card) => card.id === action.payload.id
+        );
+        filetredlikedCards.isLiked = !filetredlikedCards.isLiked;
+      }
     },
     showFilteredCards(state, action) {
       state.isButtonClicked = !state.isButtonClicked;
-      //   if (state.isButtonClicked) {
-      //     const newState = state.cards.filter((card) => card.isLiked === true);
-      //     state.filteredCards = newState;
-      //   } else return state.cards;
+      if (state.isButtonClicked) {
+        const newState = state.cards.filter((card) => card.isLiked === true);
+        state.filteredCards = newState;
+      }
     },
   },
   extraReducers: {
