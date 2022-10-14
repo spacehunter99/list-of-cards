@@ -1,0 +1,85 @@
+.card-list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 70px;
+
+  .filter-button-container {
+    margin: 40px 0px;
+
+    .filter-button {
+      align-items: center;
+      background-color: #3399ff;
+      border: 2px solid #111;
+      border-radius: 8px;
+      box-sizing: border-box;
+      color: white;
+      cursor: pointer;
+      display: flex;
+      font-family: Inter, sans-serif;
+      font-size: 17px;
+      height: 48px;
+      justify-content: center;
+      line-height: 24px;
+      max-width: 100%;
+      padding: 0 25px;
+      position: relative;
+      text-align: center;
+      text-decoration: none;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+    }
+
+    .filter-button:after {
+      background-color: #111;
+      border-radius: 8px;
+      content: "";
+      display: block;
+      height: 48px;
+      left: 0;
+      width: 100%;
+      position: absolute;
+      top: -2px;
+      transform: translate(8px, 8px);
+      transition: transform 0.2s ease-out;
+      z-index: -1;
+    }
+
+    .filter-button:hover:after {
+      transform: translate(0, 0);
+    }
+
+    .filter-button:active {
+      background-color: #3399ff;
+      outline: 0;
+    }
+
+    .filter-button:hover {
+      outline: 0;
+    }
+
+    @media (min-width: 768px) {
+      .filter-button {
+        padding: 0 40px;
+      }
+    }
+  }
+
+  .card-list-container-items {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .card-list-container-items {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+}

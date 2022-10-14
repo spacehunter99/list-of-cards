@@ -4,7 +4,7 @@ export const fetchCards = createAsyncThunk(
   "cards/fetchCards",
   async function () {
     const response = await fetch(
-      "https://zoo-animal-api.herokuapp.com/animals/rand/5"
+      "https://zoo-animal-api.herokuapp.com/animals/rand/9"
     );
     const data = await response.json();
     return data.map((item) => ({

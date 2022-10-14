@@ -1,0 +1,112 @@
+.card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 400px;
+  height: 550px;
+  background-color: #ffffff;
+  border-radius: 30px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  margin: 15px 15px;
+
+  .card-image-and-name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    .card-image-container {
+      display: flex;
+      align-self: center;
+      align-items: center;
+      padding-top: 50px;
+    }
+
+    .card-image {
+      width: 260px;
+      height: 260px;
+      object-fit: cover;
+    }
+  }
+
+  .card-description {
+    display: flex;
+    flex-direction: column;
+
+    .card-geo-and-diet {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      justify-content: space-between;
+      padding: 0px 20px;
+
+      .card-geo {
+        padding-bottom: 5px;
+      }
+
+      .card-diet {
+        padding-bottom: 5px;
+      }
+    }
+
+    .card-type-and-lifespan {
+      display: flex;
+      justify-content: space-between;
+      padding: 5px 20px;
+    }
+  }
+
+  .card-like-and-delete {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 100%;
+    padding-bottom: 30px;
+
+    .like-icon {
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    .delete-button-icon {
+      width: 22px;
+      cursor: pointer;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .card-container {
+    width: 300px;
+    height: 450px;
+
+    .card-image-and-name {
+      .card-image-container {
+        padding-top: 30px;
+      }
+
+      .card-image {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+      }
+    }
+
+    .card-like-and-delete {
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-end;
+      height: 100%;
+      padding-bottom: 15px;
+
+      .like-icon {
+        font-size: 19px;
+      }
+
+      .delete-button-icon {
+        width: 19px;
+      }
+    }
+  }
+}

@@ -1,5 +1,6 @@
 import React from "react";
 import CardList from "../CardList";
+import "./style.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCards } from "./../../store/cardSlice";
 import { useEffect } from "react";
