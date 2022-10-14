@@ -36,7 +36,7 @@ const CardList = () => {
           {filteredCards.length > 0 ? (
             filteredCards
           ) : (
-            <h2>Вам пока ничего не понравилось</h2>
+            <h2>Вы пока ничего не отметили</h2>
           )}
         </div>
       ) : (

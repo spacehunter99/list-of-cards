@@ -27,12 +27,20 @@ const Card = ({ info }) => {
       </div>
       <div className="card-description">
         <div className="card-geo-and-diet">
-          <span className="card-geo">Distribution area: {geo_range}</span>
-          <span className="card-diet">Diet: {diet}</span>
+          <span className="card-geo">
+            <b>Distribution area</b>: {geo_range}
+          </span>
+          <span className="card-diet">
+            <b>Diet</b>: {diet}
+          </span>
         </div>
         <div className="card-type-and-lifespan">
-          <span className="card-type">Type: {animal_type}</span>
-          <span className="card-lifespan">Lifespan: {lifespan} years</span>
+          <span className="card-type">
+            <b>Type</b>: {animal_type}
+          </span>
+          <span className="card-lifespan">
+            <b>Lifespan</b>: {lifespan} years
+          </span>
         </div>
       </div>
       <div className="card-like-and-delete">
