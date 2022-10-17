@@ -1,9 +1,14 @@
 import React from "react";
 import "./style.scss";
-import { useDispatch, useSelector } from "react-redux";
+import { CardInfo } from "./../../types/types";
+import { useAppDispatch, useAppSelector } from "./../../hook";
 import { removeCard, toggleIsLiked } from "./../../store/cardSlice";
 
-const Card = ({ info }) => {
+interface CardProps {
+  info: CardInfo;
+}
+
+const Card: React.FC<CardProps> = ({ info }) => {
   const {
     id,
     name,
@@ -14,8 +19,8 @@ const Card = ({ info }) => {
     diet,
     lifespan,
   } = info;
-  const dispatch = useDispatch();
-  const buttonState = useSelector((state) => state.cards.isButtonClicked);
+  const dispatch = useAppDispatch();
+  const buttonState = useAppSelector((state) => state.cards.isButtonClicked);
 
   return (
     <div className="card-container">
@@ -44,16 +49,13 @@ const Card = ({ info }) => {
         </div>
       </div>
       <div className="card-like-and-delete">
-        <div
-          className="like-icon"
-          onClick={() => dispatch(toggleIsLiked({ id }))}
-        >
+        <div className="like-icon" onClick={() => dispatch(toggleIsLiked(id))}>
           {isLiked ? <span>💖</span> : <span>🤍</span>}
         </div>
         {!buttonState && (
           <div
             className="delete-button"
-            onClick={() => dispatch(removeCard({ id }))}
+            onClick={() => dispatch(removeCard(id))}
           >
             <img
               className="delete-button-icon"

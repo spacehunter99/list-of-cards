@@ -1,17 +1,15 @@
 import React from "react";
-import Card from "../Card";
+import Card from "./../Card";
 import "./style.scss";
-import { useDispatch, useSelector } from "react-redux";
+import { useAppDispatch, useAppSelector } from "./../../hook";
 import { showFilteredCards } from "./../../store/cardSlice";
 
-const CardList = () => {
-  const animals = useSelector((state) => state.cards.cards);
-  const buttonState = useSelector((state) => state.cards.isButtonClicked);
-  const filteredAnimals = useSelector((state) => state.cards.filteredCards);
+const CardList: React.FC = () => {
+  const animals = useAppSelector((state) => state.cards.cards);
+  const buttonState = useAppSelector((state) => state.cards.isButtonClicked);
+  const filteredAnimals = useAppSelector((state) => state.cards.filteredCards);
 
-  console.log(animals);
-
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const cards = animals.map((animal) => {
     return <Card key={animal.id} info={animal} />;

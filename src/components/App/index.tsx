@@ -1,12 +1,12 @@
 import React from "react";
-import CardList from "../CardList";
+import CardList from "./../CardList";
 import "./style.scss";
-import { useDispatch, useSelector } from "react-redux";
+import { useAppDispatch } from "./../../hook";
 import { fetchCards } from "./../../store/cardSlice";
 import { useEffect } from "react";
 
-const App = () => {
-  const dispatch = useDispatch();
+const App: React.FC = () => {
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     dispatch(fetchCards());
